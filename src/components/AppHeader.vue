@@ -7,7 +7,7 @@
             Home
             <span class="sr-only">(current)</span>
           </router-link>
-          <a class="nav-item nav-link" href="#">Product</a>
+          <router-link to="/product" class="nav-item nav-link">Product</router-link>
         </div>
         <div class="dropdown open">
           <button
