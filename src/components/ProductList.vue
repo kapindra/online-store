@@ -18,6 +18,10 @@ export default {
   components: {
     ProductCart,
   },
+
+  mounted() {
+    this.$store.dispatch('getProducts');
+  }
 };
 </script>
 
