@@ -1,13 +1,19 @@
 <template>
   <div class="col-3 pb-4">
     <div class="card h-100 text-left">
-      <img class="card-img-top" src="https://via.placeholder.com/150" alt />
+      <img class="card-img-top" :src="product.image" alt />
       <div class="card-body">
         <h4 class="card-title">
-          <router-link :to="{name: 'product', params:{id: 23}}">Product Title</router-link>
+          <router-link :to="{name: 'product', params:{id: product.id}}">{{product.title}}</router-link>
         </h4>
-        <strong>$24</strong>
-        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <strong>Rs.{{product.price}}</strong>
+        <p class="card-text">{{product.description}}</p>
+        <p>
+          Created at: {{product.created_at}}
+        </p>
+        <p>
+          Updated at: {{product.updated_at}}
+        </p>
         <div>
           <button class="btn btn-secondary">Add to Cart</button>
         </div>
@@ -17,7 +23,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: [
+    'product',
+  ]
+};
 </script>
 
 <style>
